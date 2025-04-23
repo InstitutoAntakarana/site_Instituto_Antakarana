@@ -1,0 +1,93 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
+export default function HomePage() {
+  return (
+    <div className="bg-gradient-to-b from-indigo-900 to-purple-900 min-h-screen text-white font-sans">
+      {/* Header */}
+      <header className="flex items-center justify-between px-6 py-4 shadow-md bg-opacity-70 bg-black">
+        <div className="flex items-center gap-3">
+          <img src="/logo.png" alt="Instituto Antakarana" className="w-12 h-12 rounded-full" />
+          <h1 className="text-2xl font-semibold">Instituto Antakarana</h1>
+        </div>
+        <nav className="space-x-4">
+          <a href="#blog" className="hover:text-purple-300">Blog</a>
+          <a href="#cursos" className="hover:text-purple-300">Cursos</a>
+          <a href="#leituras" className="hover:text-purple-300">Leituras</a>
+          <a href="#contato" className="hover:text-purple-300">Contato</a>
+        </nav>
+      </header>
+
+      {/* Hero Section */}
+      <section className="text-center py-20 px-6 bg-[url('/background.jpg')] bg-cover bg-center">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">Caminhos para a espiritualidade e o autoconhecimento</h2>
+        <p className="mb-6 text-lg max-w-xl mx-auto">Explore cursos, leituras e reflexões que nutrem a alma.</p>
+        <Button className="bg-purple-600 hover:bg-purple-500 text-white px-6 py-3">Saiba mais</Button>
+      </section>
+
+      {/* Blog Section */}
+      <section id="blog" className="px-6 py-12">
+        <h3 className="text-3xl font-semibold mb-6">Últimas do Blog</h3>
+        <div className="grid md:grid-cols-4 gap-6">
+          {[
+            { title: "Sessão de Cura: o que esperar?", date: "18 de maio de 2024" },
+            { title: "Os benefícios da meditação diária", date: "18 de maio de 2022" },
+            { title: "Como criar um espaço sagrado em casa", date: "-" },
+            { title: "5 mantras para o equilíbrio interior", date: "28 de maio de 2024" }
+          ].map((post, idx) => (
+            <Card key={idx} className="bg-black bg-opacity-40">
+              <CardContent className="p-4">
+                <h4 className="font-semibold text-lg mb-2">{post.title}</h4>
+                <p className="text-sm text-gray-300">{post.date}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Cursos Section */}
+      <section id="cursos" className="px-6 py-12 bg-black bg-opacity-20">
+        <h3 className="text-3xl font-semibold mb-6">Cursos</h3>
+        <div className="grid md:grid-cols-2 gap-6">
+          <Card className="bg-black bg-opacity-40">
+            <CardContent className="p-4">
+              <h4 className="font-semibold text-xl mb-2">Introdução ao Autoconhecimento</h4>
+              <p className="text-sm">Curso presencial – 16 de maio de 2024</p>
+            </CardContent>
+          </Card>
+          <Card className="bg-black bg-opacity-40">
+            <CardContent className="p-4">
+              <h4 className="font-semibold text-xl mb-2">Meditação e Mindfulness</h4>
+              <p className="text-sm">Curso online – Disponível a qualquer momento</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Leituras Section */}
+      <section id="leituras" className="px-6 py-12">
+        <h3 className="text-3xl font-semibold mb-6">Indicações de Leitura</h3>
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            "O Poder do Agora",
+            "A Profecia Celestina",
+            "Medicina da Alma"
+          ].map((book, idx) => (
+            <Card key={idx} className="bg-black bg-opacity-40">
+              <CardContent className="p-4">
+                <h4 className="font-semibold text-lg">{book}</h4>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer id="contato" className="text-center py-6 border-t border-purple-800">
+        <p className="text-sm text-gray-300">© 2025 Instituto Antakarana – Todos os direitos reservados.</p>
+        <p className="text-sm mt-2">Contato: contato@institutoantakarana.org</p>
+      </footer>
+    </div>
+  );
+}
