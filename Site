@@ -1,0 +1,6 @@
+git init
+git add .
+git commit -m "Primeiro commit do site do Instituto Antakarana"
+git branch -M main
+git remote add origin https://github.com/InstitutoAntakarana/site_Instituto_Antakarana.git
+git push -u origin main
